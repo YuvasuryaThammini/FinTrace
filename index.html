@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a0e">
+  <meta name="description" content="FinTrace financial crime intelligence and investigation workspace.">
+  <title>FinTrace | Financial Crime Operations</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260615.2">
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <header class="topbar">
+      <button class="brand" id="brandHome" type="button" aria-label="Open FinTrace command center">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <path class="logo-shell" d="M8 4h25l7 7v25l-8 8H8z"/>
+            <path class="logo-ft" d="M14 13h14v5h-8v5h7v5h-7v8h-6zm15 0h7v5h-2v18h-5V18h-2v-5z"/>
+            <path class="logo-scan" d="M5 35h11l5-6 6 3 8-12 8 3"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>FinTrace</strong>
+          <small>Risk intelligence system</small>
+        </span>
+      </button>
+
+      <button class="module-trigger" id="railToggle" type="button" title="Toggle module dock" aria-label="Toggle module dock">
+        <i data-lucide="panels-top-left"></i>
+        <span>Modules</span>
+      </button>
+
+      <label class="global-search">
+        <i data-lucide="search"></i>
+        <span class="sr-only">Search entities, cases, accounts, transactions, wallets or reports</span>
+        <input id="globalSearch" type="search" placeholder="Search the intelligence graph">
+        <kbd>Ctrl K</kbd>
+      </label>
+
+      <div class="top-actions">
+        <span class="secure-mode"><i data-lucide="shield-check"></i>Secure workspace</span>
+        <label class="jurisdiction-select">
+          <i data-lucide="globe-2"></i>
+          <select id="jurisdiction" aria-label="Jurisdiction">
+            <option>Global</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>European Union</option>
+            <option>India</option>
+            <option>Singapore</option>
+          </select>
+        </label>
+        <button class="icon-button notification-button" type="button" title="Priority notifications" aria-label="Priority notifications" aria-expanded="false" aria-controls="notificationPanel">
+          <i data-lucide="bell"></i>
+          <b id="notificationCount">7</b>
+        </button>
+        <button class="user-button" type="button" title="User menu">
+          <span class="avatar">TY</span>
+          <span class="user-copy"><strong>Yuvasurya</strong><small>Senior investigator</small></span>
+          <i data-lucide="chevron-down"></i>
+        </button>
+      </div>
+    </header>
+
+    <aside class="notification-panel" id="notificationPanel" aria-label="Priority notifications" hidden>
+      <header class="notification-header">
+        <div>
+          <span>Priority center</span>
+          <strong>Notifications</strong>
+        </div>
+        <button class="icon-button" id="closeNotifications" type="button" title="Close notifications" aria-label="Close notifications">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <div class="notification-list" id="notificationList"></div>
+      <footer class="notification-footer">
+        <button class="button" id="markAllRead" type="button"><i data-lucide="check-check"></i>Mark all read</button>
+        <button class="button primary" id="openAlertCenter" type="button">Open alert center<i data-lucide="arrow-right"></i></button>
+      </footer>
+    </aside>
+
+    <button class="mobile-menu" id="mobileMenu" type="button" title="Open modules" aria-label="Open modules">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <nav id="primaryNav" class="nav-groups" aria-label="Financial crime modules"></nav>
+    <div class="mobile-scrim" id="mobileScrim"></div>
+
+    <section class="signal-bar">
+      <div id="liveStrip" class="live-strip" aria-live="polite"></div>
+      <div class="signal-status">
+        <span><i data-lucide="database"></i>14.8M entities</span>
+        <span><i data-lucide="radio"></i>28 feeds live</span>
+        <span class="demo-flag">Fictional demo data</span>
+      </div>
+    </section>
+
+    <main class="main-shell">
+      <header class="workspace-heading">
+        <div>
+          <p id="pageEyebrow">Operations</p>
+          <div class="heading-line">
+            <h1 id="pageTitle">Command Center</h1>
+            <span id="pageHelp" class="info-tip" tabindex="0" aria-label="Page information"><i data-lucide="info"></i></span>
+          </div>
+        </div>
+        <div class="workspace-actions">
+          <span class="system-clock"><i data-lucide="clock-3"></i><b id="workspaceClock">IST 10:42:16</b></span>
+          <button class="button" id="exportWorkspace" type="button" title="Export workspace"><i data-lucide="download"></i>Export</button>
+          <button class="button primary" id="newInvestigation" type="button" title="Create investigation"><i data-lucide="plus"></i>New investigation</button>
+        </div>
+      </header>
+
+      <section id="appView" class="app-view" aria-label="Financial crime workspace"></section>
+    </main>
+
+    <footer class="product-footer">
+      <div>
+        <strong>FinTrace</strong>
+        <span>Financial crime intelligence platform</span>
+      </div>
+      <div class="creator-credit">
+        <span>Designed and engineered by</span>
+        <strong>Thammini Yuvasurya</strong>
+        <a href="mailto:yuvanaidu8@gmail.com">yuvanaidu8@gmail.com</a>
+      </div>
+      <small>&copy; 2026 FinTrace. All rights reserved.</small>
+    </footer>
+  </div>
+
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+  <script src="lucide.min.js?v=20260615.2"></script>
+  <script src="app.js?v=20260615.2"></script>
+</body>
+</html>
